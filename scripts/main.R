@@ -29,7 +29,7 @@ ts$add_to_tier(3, "Pressure")
 # Run the BOSS algorithm
 ts$use_sem_bic(penalty_discount = 2)
 ts$use_fisher_z(alpha = 0.01)
-graph <- ts$run_pc()
+graph <- ts$run_boss()
 ts$print_graph(graph)
 
 # Visualize the resulting graph if in RStudio
