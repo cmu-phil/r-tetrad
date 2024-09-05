@@ -2,7 +2,7 @@
 
 We are working on a new wrapping of the algorithms in the Tetrad project, https://github.com/cmu-phil/tetrad, using R-Java. The idea is to remove the need for the user to install anything but R.
 
-Initial wrappings have been done for some algorithms as of 2024-09-05.
+Initial wrappings have been done for some algorithms as of 2024-09-05. This sort of wrapping is fairly quick once the idea has been worked out; we should be able to make rapid progress.
 
 The idea is to reproduce the functionality of [TetradSearch.py in the py-tetrad project](https://github.com/cmu-phil/py-tetrad/blob/main/pytetrad/tools/TetradSearch.py) using [rJava](https://rdrr.io/cran/rJava/man/). That wrapping of Tetrad required that the user install both Java and Python themselves and coordinate them manually with R. We got extensive user feedback about that from R users, who almost universally expressed a preference that installing Python and Java in addition to R for R code, and manually coordinating them with R, was suboptimal. In this project, we eliminate the need to install Python or even Java; only R is needed; the scripts handle the connection to Java internally.
 
