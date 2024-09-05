@@ -8,7 +8,7 @@ The idea is to reproduce the functionality of [TetradSearch.py in the py-tetrad 
 
 This will hopefully provide more up-to-date and more easily maintainable access to the current Tetrad library code than our previous Tetrad rJava project, [r-causal](https://github.com/bd2kccd/r-causal). Also, keeping this project up to date should be much easier than with r-causal, so it's less likely to get out of date. Mostly it's a matter of updating the URLs for the Java JDK and Tetrad jar downloads, as these jars are not stored on this GitHub site and to not need to be updated there. Any new requrested functionality can be added as well.
 
-Comments are always welcome.
+Comments are always welcome. After the initial implementation is completed, we will welcome updates from the community through the pull request functionality in GitHub (which has yet to be set up).
 
 # Install
 
