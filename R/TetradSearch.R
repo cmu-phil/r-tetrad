@@ -9,8 +9,7 @@ TetradSearch <- setRefClass(
     score = "ANY",                # Score object
     test = "ANY",                 # IndependenceTest object
     knowledge = "ANY",            # Background knowledge object
-    graph = "ANY",                # Resulting graph
-    search = "ANY"                # Search object
+    graph = "ANY"                 # Resulting graph
   ),
 
   methods = list(
@@ -54,14 +53,14 @@ TetradSearch <- setRefClass(
       }
     },
 
-    .set_knowledge = function() {
-      .jcall(.self$search, "V", "setKnowledge", .jcast(.self$knowledge, "edu.cmu.tetrad.data.Knowledge"))
+    .set_knowledge = function(search) {
+      .jcall(search, "V", "setKnowledge", .jcast(.self$knowledge, "edu.cmu.tetrad.data.Knowledge"))
     },
 
     # Run the search algorithm, for the typical case
-    .run_search = function() {
-      .self$.set_knowledge()
-      .self$graph <- .jcast(.self$search$search(), "edu.cmu.tetrad.graph.Graph")
+    .run_search = function(search) {
+      .self$.set_knowledge(search)
+      .self$graph <- .jcast(search$search(), "edu.cmu.tetrad.graph.Graph")
     },
 
     # Make sure the test object is initialized
@@ -120,10 +119,9 @@ TetradSearch <- setRefClass(
       cat("Running PC algorithm...\n")
       tryCatch({
         .self$.check_test()
-        .self$search <- .jnew("edu.cmu.tetrad.search.Pc",
-                              .jcast(.self$test, "edu.cmu.tetrad.search.IndependenceTest"))
-        .self$.set_knowledge()
-        .self$.run_search()
+        search <- .jnew("edu.cmu.tetrad.search.Pc",
+                        .jcast(.self$test, "edu.cmu.tetrad.search.IndependenceTest"))
+        .self$.run_search(search)
         cat("PC algorithm completed. Graph generated.\n")
       }, error = function(e) {
         stop("Error during PC algorithm execution:", e$message, "\n")
@@ -140,8 +138,8 @@ TetradSearch <- setRefClass(
 
       tryCatch({
         .self$.check_score()
-        .self$search <- .jnew("edu.cmu.tetrad.search.Fges", .self$score)
-        .self$.run_search()
+        search <- .jnew("edu.cmu.tetrad.search.Fges", .self$score)
+        .self$.run_search(search)
         cat("FGES algorithm completed. Graph generated.\n")
       }, error = function(e) {
         # Print the error message for debugging
@@ -161,9 +159,9 @@ TetradSearch <- setRefClass(
       tryCatch({
         .self$.check_score()
         suborder_search <- .jnew("edu.cmu.tetrad.search.Boss", .self$score)
-        .self$search <- .jnew("edu.cmu.tetrad.search.PermutationSearch",
-                              .jcast(suborder_search, "edu.cmu.tetrad.search.SuborderSearch"))
-        .self$.run_search()
+        search <- .jnew("edu.cmu.tetrad.search.PermutationSearch",
+                        .jcast(suborder_search, "edu.cmu.tetrad.search.SuborderSearch"))
+        .self$.run_search(search)
         cat("BOSS algorithm completed. Graph generated.\n")
       }, error = function(e) {
         stop("Error during BOSS algorithm execution:", e$message, "\n")
@@ -180,8 +178,8 @@ TetradSearch <- setRefClass(
 
       tryCatch({
         .self$.check_test()
-        .self$search <- .jnew("edu.cmu.tetrad.search.Fci", .self$test)
-        .self$.run_search()
+        search <- .jnew("edu.cmu.tetrad.search.Fci", .self$test)
+        .self$.run_search(search)
       }, error = function(e) {
         stop("Error during FCI algorithm execution:", e$message, "\n")
       })
@@ -198,8 +196,8 @@ TetradSearch <- setRefClass(
       tryCatch({
         .self$.check_score()
         .self$.check_test()
-        .self$search <- .jnew("edu.cmu.tetrad.search.BFci", .self$test, .self$score)
-        .self$.run_search()
+        search <- .jnew("edu.cmu.tetrad.search.BFci", .self$test, .self$score)
+        .self$.run_search(search)
         cat("BFCI algorithm completed. Graph generated.\n")
       }, error = function(e) {
         stop("Error during BFCI algorithm execution:", e$message, "\n")
@@ -217,8 +215,8 @@ TetradSearch <- setRefClass(
       tryCatch({
         .self$.check_score()
         .self$.check_test()
-        .self$search <- .jnew("edu.cmu.tetrad.search.LvLite",.self$test, .self$score)
-        .self$.run_search()
+        search <- .jnew("edu.cmu.tetrad.search.LvLite", .self$test, .self$score)
+        .self$.run_search(search)
         cat("LV-Lite algorithm completed. Graph generated.\n")
       }, error = function(e) {
         stop("Error during LV-Lite algorithm execution:", e$message, "\n")
