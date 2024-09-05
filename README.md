@@ -6,7 +6,7 @@ Initial code has been done for some algorithms as of 2024-09-05.
 
 # Install
 
-This code can be used in R or RStudio. It has been tested on Mac aarch64 and Windows x64 but should also work on Mac x64 and Linux. Additional platforms are available by mucking with the code.
+This code can be used in R or RStudio. It has been tested on Mac aarch64 and Windows x64 but should also work on Mac x64 and Linux. Additional platforms are available by mucking with the code. We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64.
 
 The procedure for running it in RStudio is as follows.
 
@@ -28,5 +28,3 @@ We assume for now that the data is continuous and calculate a covaraince matrix 
 Please see the main.R file for a description of how to use the scripts.
 
 Once this code is more mature, we will make an R package from it. As a step in that direction, we've organized the code into package-like directories.
-
-We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64.
