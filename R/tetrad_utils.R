@@ -6,7 +6,7 @@ MAC_JDK_URL_ARM <- "https://corretto.aws/downloads/latest/amazon-corretto-21-aar
 MAC_JDK_URL_X86 <- "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-macos-jdk.tar.gz"
 LINUX_JDK_URL <- "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.tar.gz"
 TETRAD_URL <- "https://s01.oss.sonatype.org/content/repositories/releases/io/github/cmu-phil/tetrad-gui/7.6.5/tetrad-gui-7.6.5-launch.jar"
-TETRAD_PATH <- "resources/tetrad-gui-7.6.5-launch.jar"
+TETRAD_PATH <- "inst/tetrad-gui-7.6.5-launch.jar"
 
 check_internet_connection <- function() {
   tryCatch({
@@ -62,7 +62,7 @@ ensure_packages_installed <- function(packages) {
 #' 
 #' @param java_dir Directory to install the JDK.
 #' @return The path to the installed JDK.
-install_local_java <- function(java_dir = file.path("resources", "jdk-21.0.12.jdk")) {
+install_local_java <- function(java_dir = file.path("inst", "jdk-21.0.12.jdk")) {
   cat("Starting Java installation...\n")
   
   if (dir.exists(java_dir)) {
@@ -77,26 +77,26 @@ install_local_java <- function(java_dir = file.path("resources", "jdk-21.0.12.jd
     cat("Detected platform:", platform, ", System name:", sysname, ", Architecture:", arch, "\n")
     
     if (platform == "windows") {
-      download_file(WINDOWS_JDK_URL, "resources/jdk.zip")
+      download_file(WINDOWS_JDK_URL, "inst/jdk.zip")
       dir.create(java_dir, recursive = TRUE)
-      unzip("resources/jdk.zip", exdir = java_dir)
-      file.remove("resources/jdk.zip")
+      unzip("inst/jdk.zip", exdir = java_dir)
+      file.remove("inst/jdk.zip")
       
     } else if (sysname == "Darwin") {
       if (arch == "arm64" || arch == "aarch64") {
-        download_file(MAC_JDK_URL_ARM, "resources/jdk.tar.gz")
+        download_file(MAC_JDK_URL_ARM, "inst/jdk.tar.gz")
       } else {
-        download_file(MAC_JDK_URL_X86, "resources/jdk.tar.gz")
+        download_file(MAC_JDK_URL_X86, "inst/jdk.tar.gz")
       }
       dir.create(java_dir, recursive = TRUE)
-      system(paste("tar -xzf resources/jdk.tar.gz -C", java_dir, "--strip-components=1"), wait = TRUE)
-      file.remove("resources/jdk.tar.gz")
+      system(paste("tar -xzf inst/jdk.tar.gz -C", java_dir, "--strip-components=1"), wait = TRUE)
+      file.remove("inst/jdk.tar.gz")
       
     } else if (sysname == "Linux") {
-      download_file(LINUX_JDK_URL, "resources/jdk.tar.gz")
+      download_file(LINUX_JDK_URL, "inst/jdk.tar.gz")
       dir.create(java_dir, recursive = TRUE)
-      system(paste("tar -xzf resources/jdk.tar.gz -C", java_dir, "--strip-components=1"), wait = TRUE)
-      file.remove("resources/jdk.tar.gz")
+      system(paste("tar -xzf inst/jdk.tar.gz -C", java_dir, "--strip-components=1"), wait = TRUE)
+      file.remove("inst/jdk.tar.gz")
     }
     
     cat("Java JDK installed at:", java_dir, "\n")
@@ -129,13 +129,13 @@ set_java_home <- function(java_home) {
 # Function to download Tetrad
 #' Download Tetrad JAR file
 #'
-#' This function downloads the Tetrad JAR file to the resources directory.
+#' This function downloads the Tetrad JAR file to the inst directory.
 download_tetrad <- function() {
   cat("Starting Tetrad download...\n")
   
-  if (!dir.exists("resources")) {
-    dir.create("resources", recursive = TRUE)
-    cat("Created resources directory.\n")
+  if (!dir.exists("inst")) {
+    dir.create("inst", recursive = TRUE)
+    cat("Created inst directory.\n")
   }
   
   destfile <- TETRAD_PATH
@@ -186,10 +186,10 @@ ensure_packages_installed <- function(packages) {
 
 # ----- Tetrad Setup -----
 setup_tetrad_environment <- function() {
-  source("resources/tetrad_utils.R")
-  source("resources/TetradSearch.R")
+  source("R/tetrad_utils.R")
+  source("R/TetradSearch.R")
 
-  java_home <- install_local_java(java_dir = "resources/jdk-21.0.12.jdk")
+  java_home <- install_local_java(java_dir = "inst/jdk-21.0.12.jdk")
   set_java_home(java_home)
   
   download_tetrad()

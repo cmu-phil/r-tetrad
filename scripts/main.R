@@ -1,6 +1,6 @@
 # ----- Main Script -----
-source("../R/tetrad_utils.R")
-source("../R/TetradSearch.R")
+source("R/tetrad_utils.R")
+source("R/TetradSearch.R")
 
 # Install required packages
 required_packages <- c("rJava", "DiagrammeR")
@@ -10,7 +10,7 @@ ensure_packages_installed(required_packages)
 setup_tetrad_environment()
 
 # Load and prepare data
-data_file <- "../data/airfoil-self-noise.continuous.txt"
+data_file <- "data/airfoil-self-noise.continuous.txt"
 data <- read.table(data_file, header = TRUE)
 continuous_columns <- c(1, ncol(data))
 data[, continuous_columns] <- apply(data[, continuous_columns], 2, as.numeric)
