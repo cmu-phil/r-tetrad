@@ -8,7 +8,7 @@ The idea is to reproduce the funcgtionality of [TetradSearch.py in the py-tetrad
 
 # Install
 
-This code can be used in R or RStudio. It has been tested on Mac aarch64 and Windows x64 but should also work on Mac x64 and Linux. Additional platforms are available by mucking with the code. We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64. Our use of Java and Tetrad are hard-coded (though the code can be mucked with). These are downloaded programmatically by our R scripts and stored locally, so occurrences of the Java JDK or Tetrad jar located elsewhere one one's computer are ignored. The version of the Java JDK we use is Corretto 21; the version of the Tetrad jar we use us 7.6.5.
+This code can be used in R or RStudio. It has been tested on Mac aarch64 and Windows x64 but should also work on Mac x64 and Linux. Additional platforms are available by mucking with the code. We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64. Our use of Java and Tetrad are hard-coded (though the code can be mucked with). These are downloaded programmatically by our R scripts and stored locally, so occurrences of the Java JDK or Tetrad jar located elsewhere one one's computer are ignored. The version of the Java JDK we use is Corretto 21; the version of the Tetrad jar we use us 7.6.5. These will be updated as needed, but our code will be consistent with the choices used.
 
 The procedure for running it in RStudio is as follows.
 
