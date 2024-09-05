@@ -217,7 +217,7 @@ visualize_graph <- function(graph) {
       dot <- .jcall("edu/cmu/tetrad/graph/GraphSaveLoadUtils", "Ljava/lang/String;", "graphToDot", graph)
       grViz(dot)
     } else {
-      cat("No graph generated. Please check the BOSS execution.\n")
+      cat("No graph generated. Please check the algorithm execution.\n")
     }
   }
 }
