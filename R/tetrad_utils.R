@@ -8,6 +8,9 @@ LINUX_JDK_URL <- "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-l
 TETRAD_URL <- "https://s01.oss.sonatype.org/content/repositories/releases/io/github/cmu-phil/tetrad-gui/7.6.5/tetrad-gui-7.6.5-launch.jar"
 TETRAD_PATH <- "inst/tetrad-gui-7.6.5-launch.jar"
 
+# Function to check internet connection
+#
+# @return TRUE if the connection is successful, FALSE otherwise.
 check_internet_connection <- function() {
   tryCatch({
     url <- "http://www.google.com"
@@ -19,6 +22,10 @@ check_internet_connection <- function() {
   })
 }
 
+# Function to download a file from a URL
+#
+# @param url The URL of the file to download.
+# @param destfile The destination file path.
 download_file <- function(url, destfile) {
   if (!check_internet_connection()) {
     stop("No internet connection. Please check your network and try again.")
@@ -37,6 +44,8 @@ download_file <- function(url, destfile) {
 }
 
 # Function to ensure necessary packages are installed
+#
+# @param packages A character vector of package names.
 ensure_packages_installed <- function(packages) {
   for (pkg in packages) {
     if (!requireNamespace(pkg, quietly = TRUE)) {
@@ -166,7 +175,9 @@ create_variables <- function(data) {
   return(vars)
 }
 
-# ----- Dependency Management -----
+# Function to ensure necessary packages are installed
+#
+# @param packages A character vector of package names.
 ensure_packages_installed <- function(packages) {
   for (pkg in packages) {
     if (!requireNamespace(pkg, quietly = TRUE)) {
@@ -176,7 +187,7 @@ ensure_packages_installed <- function(packages) {
   lapply(packages, library, character.only = TRUE)
 }
 
-# ----- Tetrad Setup -----
+# Function to install Java JDK 21 locally, considering architecture
 setup_tetrad_environment <- function() {
   source("R/tetrad_utils.R")
   source("R/TetradSearch.R")
@@ -190,7 +201,7 @@ setup_tetrad_environment <- function() {
   initialize_java()
 }
 
-# ----- Initialize Java and Check Version -----
+# Function to initialize Java
 initialize_java <- function() {
   library(rJava)
   
@@ -202,7 +213,9 @@ initialize_java <- function() {
   print(paste("Java version:", java_version))
 }
 
-# ----- Graph Visualization -----
+# Function to visualize the graph using DiagrammeR if the user is in the RStudio environment.
+#
+# @param graph The Tetrad Graph object to visualize.
 visualize_graph <- function(graph) {
   if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
     b <- TRUE

@@ -1,3 +1,8 @@
+# Description: This file contains the TetradSearch class definition.
+#
+# The TetradSearch class is a reference class that provides an interface to the
+# Tetrad search algorithms. It allows the user to run various algorithms and
+# print the resulting graph structure.
 TetradSearch <- setRefClass(
   "TetradSearch",
 
