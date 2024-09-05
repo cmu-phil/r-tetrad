@@ -1,14 +1,14 @@
 # r-tetrad
 
-We are working on a new wrapping of the algorithms in the Tetrad project, https://github.com/cmu-phil/tetrad, using R-Java. The idea is to remove the need for the user to install anything but R.
+This is a proposed novel wrapping in R of the algorithms in the Ttrad project, https://github.com/cmu-phil/tetrad, using R-Java. The idea is to remove the need for the user to install anything but R.
 
-Initial wrappings have been done for some algorithms as of 2024-09-05. This sort of wrapping is fairly quick once the idea has been worked out; we should be able to make rapid progress.
+Some algorithms have already been included as of 2024-09-05. Finishing up the rest should fairly quick once the idea has been worked out.
 
 The idea is to reproduce the functionality of [TetradSearch.py in the py-tetrad project](https://github.com/cmu-phil/py-tetrad/blob/main/pytetrad/tools/TetradSearch.py) using [rJava](https://rdrr.io/cran/rJava/man/). That wrapping of Tetrad required that the user install both Java and Python themselves and coordinate them manually with R. We got extensive user feedback about that from R users, who almost universally expressed a preference that installing Python and Java in addition to R for R code, and manually coordinating them with R, was suboptimal. In this project, we eliminate the need to install Python or even Java; only R is needed; the scripts handle the connection to Java internally so that this is transparent to the user.
 
 This will hopefully provide more up-to-date and more easily maintainable access to the current Tetrad library code than our previous Tetrad rJava project, [r-causal](https://github.com/bd2kccd/r-causal). Also, keeping this project up to date should be much easier than with r-causal, so it's less likely to get out of date. Mostly it's a matter of updating the URLs for the Java JDK and Tetrad jar downloads, as these jars are not stored on this GitHub site and to not need to be updated there. Any new requrested functionality can be added as well.
 
-Comments are always welcome.
+Comments are always welcome. After the initial implementation is completed, we will welcome updates from the community through the pull request functionality in GitHub (which has yet to be set up).
 
 # Install
 
