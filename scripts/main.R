@@ -20,16 +20,16 @@ ts <- TetradSearch$new(data)
 
 # Optionally, add knowledge to specific tiers
 ts$add_to_tier(1, "Velocity")
-ts$add_to_tier(1, "Frequency")
+ts$add_to_tier(1, "Chord")
 ts$add_to_tier(1, "Attack")
-ts$add_to_tier(2, "Chord")
+ts$add_to_tier(2, "Frequency")
 ts$add_to_tier(2, "Displacement")
 ts$add_to_tier(3, "Pressure")
 
 # Run the BOSS algorithm
 ts$use_sem_bic(penalty_discount = 2)
-ts$use_fisher_z()
-graph <- ts$run_bfci()
+ts$use_fisher_z(alpha = 0.01)
+graph <- ts$run_boss()
 ts$print_graph(graph)
 
 # Visualize the resulting graph if in RStudio
