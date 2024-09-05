@@ -4,9 +4,11 @@ We are working on a new wrapping of the algorithms in the Tetrad project, https:
 
 Initial code has been done for some algorithms as of 2024-09-05.
 
+The idea is to reproduce the funcgtionality of [TetradSearch.py in the py-tetrad project](https://github.com/cmu-phil/py-tetrad/blob/main/pytetrad/tools/TetradSearch.py) using [rJava](https://rdrr.io/cran/rJava/man/).
+
 # Install
 
-This code can be used in R or RStudio. It has been tested on Mac aarch64 and Windows x64 but should also work on Mac x64 and Linux. Additional platforms are available by mucking with the code. We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64.
+This code can be used in R or RStudio. It has been tested on Mac aarch64 and Windows x64 but should also work on Mac x64 and Linux. Additional platforms are available by mucking with the code. We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64. Our use of Java and Tetrad are hard-coded (though the code can be mucked with). The version of the Java JDK we use is Corretto 21; the version of the Tetrad jar we use us 7.6.5.
 
 The procedure for running it in RStudio is as follows.
 
