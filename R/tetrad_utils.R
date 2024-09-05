@@ -46,14 +46,6 @@ ensure_packages_installed <- function(packages) {
   lapply(packages, library)#, character.only = TRUE)
 }
 
-# # Function to download Java JDK based on platform
-# download_file <- function(url, destfile) {
-#   download.file(url, destfile)
-#   if (!file.exists(destfile)) {
-#     stop("Failed to download Java from ", url)
-#   }
-# }
-
 # Function to install Java JDK 21 locally, considering architecture
 #' Install Java JDK locally
 #'
