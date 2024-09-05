@@ -77,8 +77,8 @@ install_local_java <- function(java_dir = file.path("inst", "jdk-21.0.12.jdk")) 
     cat("Detected platform:", platform, ", System name:", sysname, ", Architecture:", arch, "\n")
     
     if (platform == "windows") {
-      download_file(WINDOWS_JDK_URL, "inst/jdk.zip")
       dir.create(java_dir, recursive = TRUE)
+      download_file(WINDOWS_JDK_URL, "inst/jdk.zip")
       unzip("inst/jdk.zip", exdir = java_dir)
       file.remove("inst/jdk.zip")
       

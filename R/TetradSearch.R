@@ -76,7 +76,6 @@ TetradSearch <- setRefClass(
     # @param tier The tier to which the variable should be added.
     # @param var_name The name of the variable to add.
     add_to_tier = function(tier, var_name) {
-      cat("Adding variable", var_name, "to tier", tier, "...\n")
       tryCatch({
         tier <- as.integer(tier)
         var_name <- as.character(var_name)
