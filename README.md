@@ -6,7 +6,7 @@ Initial code has been done for some algorithms as of 2024-09-05.
 
 The idea is to reproduce the funcgtionality of [TetradSearch.py in the py-tetrad project](https://github.com/cmu-phil/py-tetrad/blob/main/pytetrad/tools/TetradSearch.py) using [rJava](https://rdrr.io/cran/rJava/man/).
 
-This will hopefully provide more up-to-date access to the current Tetrad library code than our previous Tetrad rJava project, [r-causal](https://github.com/bd2kccd/r-causal). It is possible that once we see how to do this wrapping, the previous code can be repaired and brought up to date; that will be a future decision to make.
+This will hopefully provide more up-to-date access to the current Tetrad library code than our previous Tetrad rJava project, [r-causal](https://github.com/bd2kccd/r-causal).
 
 # Install
 
