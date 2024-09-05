@@ -27,6 +27,6 @@ We assume for now that the data is continuous and calculate a covaraince matrix 
 
 Please see the main.R file for a description of how to use the scripts.
 
-Once this code is more mature, we will make an R package from it.
+Once this code is more mature, we will make an R package from it. As a step in that direction, we've organized the code into package-like directories.
 
 We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64.
