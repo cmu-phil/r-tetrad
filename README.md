@@ -36,3 +36,7 @@ We assume for now that the data is continuous and calculate a covaraince matrix 
 Please see the main.R file for a description of how to use the scripts.
 
 Once this code is more mature, we will make an R package from it. As a step in that direction, we've organized the code into package-like directories.
+
+# Support
+
+This work is supported by the Department of Philosophy of Carnegie Mellon University and by the Software Engineering Institute of Carnegie Mellon University, both in Pittsburgh, PA, USA.
