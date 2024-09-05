@@ -4,7 +4,7 @@ We are working on a new wrapping of the algorithms in the Tetrad project, https:
 
 Initial wrappings have been done for some algorithms as of 2024-09-05. This sort of wrapping is fairly quick once the idea has been worked out; we should be able to make rapid progress.
 
-The idea is to reproduce the functionality of [TetradSearch.py in the py-tetrad project](https://github.com/cmu-phil/py-tetrad/blob/main/pytetrad/tools/TetradSearch.py) using [rJava](https://rdrr.io/cran/rJava/man/). That wrapping of Tetrad required that the user install both Java and Python themselves and coordinate them manually with R. We got extensive user feedback about that from R users, who almost universally expressed a preference that installing Python and Java in addition to R for R code, and manually coordinating them with R, was suboptimal. In this project, we eliminate the need to install Python or even Java; only R is needed; the scripts handle the connection to Java internally.
+The idea is to reproduce the functionality of [TetradSearch.py in the py-tetrad project](https://github.com/cmu-phil/py-tetrad/blob/main/pytetrad/tools/TetradSearch.py) using [rJava](https://rdrr.io/cran/rJava/man/). That wrapping of Tetrad required that the user install both Java and Python themselves and coordinate them manually with R. We got extensive user feedback about that from R users, who almost universally expressed a preference that installing Python and Java in addition to R for R code, and manually coordinating them with R, was suboptimal. In this project, we eliminate the need to install Python or even Java; only R is needed; the scripts handle the connection to Java internally so that this is transparent to the user.
 
 This will hopefully provide more up-to-date and more easily maintainable access to the current Tetrad library code than our previous Tetrad rJava project, [r-causal](https://github.com/bd2kccd/r-causal). Also, keeping this project up to date should be much easier than with r-causal, so it's less likely to get out of date. Mostly it's a matter of updating the URLs for the Java JDK and Tetrad jar downloads, as these jars are not stored on this GitHub site and to not need to be updated there. Any new requrested functionality can be added as well.
 
@@ -13,6 +13,8 @@ Comments are always welcome.
 # Install
 
 This code can be used in R or RStudio. It has been tested on Mac aarch64 and Windows x64 but should also work on Mac x64 and Linux. Additional platforms are available by mucking with the code. We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64. Our use of Java and Tetrad are hard-coded (though the code can be mucked with). These are downloaded programmatically by our R scripts and stored locally, so occurrences of the Java JDK or Tetrad jar located elsewhere one one's computer are ignored. The version of the Java JDK we use is Corretto 21; the version of the Tetrad jar we use us 7.6.5. These will be updated as needed, but our code will be consistent with the choices used.
+
+An internet connection is required in order to use this code, to download the above jars. Once the jars have been downloaded, an internet connection is no longer needed.
 
 The procedure for running it in RStudio is as follows.
 
