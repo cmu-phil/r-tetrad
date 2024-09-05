@@ -1,6 +1,6 @@
 # r-tetrad
 
-We are working on a new wrapping of the algorihtms in the Tetrad project, https://github.com/cmu-phil/tetrad, using R-Java. The idea is to remove the need for the user to install anything R, so the user will not need to install Python or Java. The jars for the Java JDK used and the Tetrad jar used will be downloaded programmatically from the web and configured for use in the project.
+We are working on a new wrapping of the algorithms in the Tetrad project, https://github.com/cmu-phil/tetrad, using R-Java. The idea is to remove the need for the user to install anything R, so the user will not need to install Python or Java. The jars for the Java JDK used and the Tetrad jar used will be downloaded programmatically from the web and configured for use in the project.
 
 Initial code has been done for some algorithms as of 2024-09-05.
 
@@ -14,7 +14,7 @@ The procedure for running it in RStudio is as follows.
 * Open RStudio.
 * From the File menu, select "New Project".
 * Click "Existing Directory".
-* Click Browse and browse to the "rstudio" directory in the repository you just cloned. Click "Open" and click "Create Project".
+* Click Browse and browse to the director for the repository you just cloned. Click "Open" and click "Create Project".
 * In the lower right-hand corner of RStudio, in the Files tab, click "main.R".
 * Click in the upper left-hand panel and type control-A to select all contents.
 * Click "Run".
