@@ -72,30 +72,30 @@ install_local_java <- function(java_dir = file.path("inst", "jdk-21.0.12.jdk")) 
   }
   
   tryCatch({
+    dir.create('inst', recursive = TRUE)
+    
     platform <- .Platform$OS.type
     sysname <- Sys.info()["sysname"]
     arch <- Sys.info()["machine"]
     cat("Detected platform:", platform, ", System name:", sysname, ", Architecture:", arch, "\n")
     
     if (platform == "windows") {
-      dir.create(java_dir, recursive = TRUE)
       download_file(WINDOWS_JDK_URL, "inst/jdk.zip")
+      dir.create(java_dir, recursive = TRUE)
       unzip("inst/jdk.zip", exdir = java_dir)
       file.remove("inst/jdk.zip")
-      
     } else if (sysname == "Darwin") {
-      dir.create(java_dir, recursive = TRUE)
       if (arch == "arm64" || arch == "aarch64") {
         download_file(MAC_JDK_URL_ARM, "inst/jdk.tar.gz")
       } else {
         download_file(MAC_JDK_URL_X86, "inst/jdk.tar.gz")
       }
+      dir.create(java_dir, recursive = TRUE)
       system(paste("tar -xzf inst/jdk.tar.gz -C", java_dir, "--strip-components=1"), wait = TRUE)
       file.remove("inst/jdk.tar.gz")
-      
     } else if (sysname == "Linux") {
-      dir.create(java_dir, recursive = TRUE)
       download_file(LINUX_JDK_URL, "inst/jdk.tar.gz")
+      dir.create(java_dir, recursive = TRUE)
       system(paste("tar -xzf inst/jdk.tar.gz -C", java_dir, "--strip-components=1"), wait = TRUE)
       file.remove("inst/jdk.tar.gz")
     }
