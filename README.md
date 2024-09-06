@@ -1,6 +1,6 @@
 # r-tetrad
 
-This is a proposed novel wrapping in R of the algorithms in the Tetrad project, https://github.com/cmu-phil/tetrad, using [rJava](https://rdrr.io/cran/rJava/man/). This removes the need for the user to install anything but R.
+This is a proposed novel wrapping in R of the algorithms in the Tetrad project, https://github.com/cmu-phil/tetrad, using [rJava](https://rdrr.io/cran/rJava/man/) that removes the need for the user to install anything but R.
 
 Some algorithms have already been included as of 2024-09-05. Finishing up the rest should fairly quick once the idea has been worked out.
 
