@@ -24,7 +24,7 @@ ts$add_to_tier(1, "Chord")
 ts$add_to_tier(1, "Attack")
 ts$add_to_tier(2, "Frequency")
 ts$add_to_tier(2, "Displacement")
-ts$add_to_tier(3, "Pressure")
+ts$add_to_tier(2, "Pressure")
 
 # Run the BOSS algorithm
 ts$use_sem_bic(penalty_discount = 2)
