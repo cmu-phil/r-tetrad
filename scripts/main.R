@@ -15,7 +15,7 @@ data <- read.table(data_file, header = TRUE)
 continuous_columns <- c(1, ncol(data))
 data[, continuous_columns] <- apply(data[, continuous_columns], 2, as.numeric)
 
-# Create a TetradSearch object with the data
+# Create a BOSS object with the data
 ts <- TetradSearch$new(data)
 
 # Optionally, add knowledge to specific tiers

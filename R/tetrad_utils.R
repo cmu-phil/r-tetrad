@@ -6,7 +6,8 @@ MAC_JDK_URL_ARM <- "https://corretto.aws/downloads/latest/amazon-corretto-21-aar
 MAC_JDK_URL_X86 <- "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-macos-jdk.tar.gz"
 LINUX_JDK_URL <- "https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.tar.gz"
 TETRAD_URL <- "https://s01.oss.sonatype.org/content/repositories/releases/io/github/cmu-phil/tetrad-gui/7.6.5/tetrad-gui-7.6.5-launch.jar"
-TETRAD_PATH <- "inst/tetrad-gui-7.6.5-launch.jar"
+TETRAD_PATH <- normalizePath("inst/tetrad-gui-7.6.5-launch.jar")
+JAVA_DIR <- normalizePath("inst/jdk-21.0.12.jdk")
 
 # Function to check internet connection
 #
@@ -63,7 +64,7 @@ ensure_packages_installed <- function(packages) {
 #' 
 #' @param java_dir Directory to install the JDK.
 #' @return The path to the installed JDK.
-install_local_java <- function(java_dir = file.path("inst", "jdk-21.0.12.jdk")) {
+install_local_java <- function(java_dir = JAVA_DIR) {
   cat("Starting Java installation...\n")
   
   if (dir.exists(java_dir)) {
@@ -192,9 +193,7 @@ setup_tetrad_environment <- function() {
   source("R/tetrad_utils.R")
   source("R/TetradSearch.R")
 
-  java_home <- install_local_java(java_dir = "inst/jdk-21.0.12.jdk")
-  set_java_home(java_home)
-  
+  install_local_java(java_dir = JAVA_DIR)
   download_tetrad()
   
   # Initialize Java
@@ -204,11 +203,10 @@ setup_tetrad_environment <- function() {
 # Function to initialize Java
 initialize_java <- function() {
   library(rJava)
-  
-   .jinit()
-  # .jinit(parameters = "-verbose:class")
-  .jaddClassPath(TETRAD_PATH)
 
+  set_java_home(JAVA_DIR)
+  .jinit()
+  .jaddClassPath(TETRAD_PATH)
   java_version <- .jcall("java/lang/System", "S", "getProperty", "java.version")
   print(paste("Java version:", java_version))
 }
