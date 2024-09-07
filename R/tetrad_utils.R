@@ -106,7 +106,7 @@ install_local_java <- function(java_dir = JAVA_DIR) {
     cat("An error occurred during Java installation:", e$message, "\n")
     stop("Installation failed. Please check the logs for more details.")
   })
-  
+
   return(java_dir)
 }
 
