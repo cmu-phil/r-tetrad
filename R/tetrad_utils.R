@@ -191,9 +191,6 @@ ensure_packages_installed <- function(packages) {
 
 # Function to install Java JDK 21 locally, considering architecture
 setup_tetrad_environment <- function() {
-  # source("R/tetrad_utils.R")
-  # source("R/TetradSearch.R")
-
   install_local_java(java_dir = JAVA_DIR)
   download_tetrad()
   
