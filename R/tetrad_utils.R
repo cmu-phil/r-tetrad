@@ -116,15 +116,15 @@ install_local_java <- function(java_dir = JAVA_DIR) {
 #' This function sets the JAVA_HOME environment variable and updates the system PATH.
 #'
 #' @param java_home The path to the Java home directory.
-set_java_home <- function(java_home) {
-  cat("Setting JAVA_HOME to:", java_home, "\n")
+set_java_home <- function(java_dir) {
+  java_home <- paste(JAVA_DIR, "/Contents/Home", sep = "")
+  cat("Setting JAVA_HOME to:", java_dir, "\n")
   
   if (!dir.exists(java_home)) {
     stop("The specified JAVA_HOME directory does not exist: ", java_home)
   }
   
-  # Sys.setenv(JAVA_HOME = java_home)
-  Sys.setenv(JAVA_HOME = paste(JAVA_DIR, "/Contents/Home", sep = ""))
+  Sys.setenv(JAVA_HOME = java_home)
   Sys.setenv(PATH = paste0(java_home, "/bin:", Sys.getenv("PATH")))
   cat("JAVA_HOME is set to:", Sys.getenv("JAVA_HOME"), "\n")
 }

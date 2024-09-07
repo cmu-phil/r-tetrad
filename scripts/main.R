@@ -9,7 +9,6 @@ setup_tetrad_environment()
 required_packages <- c("rJava", "DiagrammeR")
 ensure_packages_installed(required_packages)
 
-
 # Load and prepare data
 data_file <- "data/airfoil-self-noise.continuous.txt"
 data <- read.table(data_file, header = TRUE)
