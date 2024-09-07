@@ -2,12 +2,13 @@
 source("R/tetrad_utils.R")
 source("R/TetradSearch.R")
 
+# Setup Java and Tetrad
+setup_tetrad_environment()
+
 # Install required packages
 required_packages <- c("rJava", "DiagrammeR")
 ensure_packages_installed(required_packages)
 
-# Setup Java and Tetrad
-setup_tetrad_environment()
 
 # Load and prepare data
 data_file <- "data/airfoil-self-noise.continuous.txt"

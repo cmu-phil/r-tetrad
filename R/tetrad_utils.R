@@ -123,7 +123,8 @@ set_java_home <- function(java_home) {
     stop("The specified JAVA_HOME directory does not exist: ", java_home)
   }
   
-  Sys.setenv(JAVA_HOME = java_home)
+  # Sys.setenv(JAVA_HOME = java_home)
+  Sys.setenv(JAVA_HOME = paste(JAVA_DIR, "/Contents/Home", sep = ""))
   Sys.setenv(PATH = paste0(java_home, "/bin:", Sys.getenv("PATH")))
   cat("JAVA_HOME is set to:", Sys.getenv("JAVA_HOME"), "\n")
 }
@@ -190,8 +191,8 @@ ensure_packages_installed <- function(packages) {
 
 # Function to install Java JDK 21 locally, considering architecture
 setup_tetrad_environment <- function() {
-  source("R/tetrad_utils.R")
-  source("R/TetradSearch.R")
+  # source("R/tetrad_utils.R")
+  # source("R/TetradSearch.R")
 
   install_local_java(java_dir = JAVA_DIR)
   download_tetrad()
