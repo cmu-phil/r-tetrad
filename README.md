@@ -40,6 +40,25 @@ The procedure for running it in RStudio is as follows.
 
 The required Java JDK and Tetrad jar should be donwloaded and a sample Tetrad search run. The sample data is the NASA airfoil self noise data. This data is included in the package in the directory "data", but it can also be downloaded from https://github.com/cmu-phil/example-causal-datasets/tree/main/real/airfoil-self-noise/data.
 
+This code has been tested on Mac (aarch64) and Windows. The versions used for Mac for testing were:
+
+```
+platform       aarch64-apple-darwin20      
+arch           aarch64                     
+os             darwin20                    
+system         aarch64, darwin20           
+status                                     
+major          4                           
+minor          3.2                         
+year           2023                        
+month          10                          
+day            31                          
+svn rev        85441                       
+language       R                           
+version.string R version 4.3.2 (2023-10-31)
+nickname       Eye Holes
+```
+
 # Description
 
 We assume for now that the data is continuous and calculate a covaraince matrix of the data. The only score currently wrapped is SEM BIC and the only test currently wrapped is Fisher Z; these choices will be expanded and more general datasets allowed. The algorithms currently made available are PC, FGES, BOSS, FCI, BFCI, and LV-Lite. These options will expand. Currently very few parameters for these algorithms are passed in; these choices will expand.
