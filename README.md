@@ -44,7 +44,7 @@ The procedure for running it in RStudio is as follows.
 
 The required Java JDK and Tetrad jar should be donwloaded and a sample Tetrad search run. The sample data is the NASA airfoil self noise data. This data is included in the package in the directory "data", but it can also be downloaded from https://github.com/cmu-phil/example-causal-datasets/tree/main/real/airfoil-self-noise/data.
 
-This code has been tested on Mac (aarch64) and Windows. The versions used for Mac for testing were:
+This code has been tested on Mac (aarch64) and Windows 11. The versions used for Mac for testing were:
 
 ```
 platform       aarch64-apple-darwin20      
