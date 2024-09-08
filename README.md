@@ -18,7 +18,7 @@ An internet connection is required in order to use this code, to download the ab
 
 The procedure for running it in RStudio is as follows.
 
-1. Clone this repository. The best ways is to install Git if you don't have it already and then in a terminal window type a git clone command.
+1. Clone this repository. The best way is to install Git if you don't have it already and then in a terminal window type a git clone command.
     1. Install Git if you don't already have it: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
     2. Then:
     3. Open a terminal window and use the cd command to move to a directory where you'e like to clone the repository--e.g. "cd /Users/user". Then type:
