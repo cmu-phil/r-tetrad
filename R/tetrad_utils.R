@@ -14,7 +14,7 @@ JAVA_DIR <- normalizePath("inst/jdk-21.0.12.jdk")
 # @return TRUE if the connection is successful, FALSE otherwise.
 check_internet_connection <- function() {
   tryCatch({
-    url <- "http://www.google.com"
+    url <- "https://www.google.com"
     con <- url(url, "r")
     close(con)
     TRUE
