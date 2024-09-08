@@ -23,13 +23,12 @@ The procedure for running it in RStudio is as follows.
         ```
         https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
         ```
-    3. Then:
-    4. Open a terminal window and use the cd command to move to a directory where you'e like to clone the repository--e.g. "cd /Users/user". Then type:
+    1. Open a terminal window and use the cd command to move to a directory where you'e like to clone the repository--e.g. "cd /Users/user". Then type:
        ```
        clone https://github.com/cmu-phil/r-tetrad
        cd r-tetrad
        ```
-    5. The contents of the r-tetrad project should be in this directory; you can examine them.
+    1. The contents of the r-tetrad project should be in this directory; you can examine them.
 
 * Then, in RStudio:
     1. Open RStudio.
