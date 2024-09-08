@@ -18,7 +18,7 @@ An internet connection is required in order to use this code, to download the ab
 
 The procedure for running it in RStudio is as follows.
 
-1. Clone this repository. The best way is to install Git if you don't have it already and then in a terminal window type a git clone command.
+* Clone this repository. The best way is to install Git if you don't have it already and then in a terminal window type a git clone command.
     1. Install Git if you don't already have it: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
     2. Then:
     3. Open a terminal window and use the cd command to move to a directory where you'e like to clone the repository--e.g. "cd /Users/user". Then type:
@@ -27,16 +27,18 @@ The procedure for running it in RStudio is as follows.
        cd r-tetrad
        ```
     4. The contents of the r-tetrad project should be in this directory; you can examine them.
-1. Open RStudio.
-1. From the File menu, select "New Project".
-1. Click "Existing Directory".
-1. Click Browse and browse into the "r-tetrad" directory you just cloned. Click "Open" and click "Create Project".
-1. In the lower right-hand corner of RStudio, in the Files tab, click on "scripts" and then click on "main.R". This should place the contents of main.R in the upper-left hand panel.
-1. Then click in the upper left-hand panel and select all its contents.
-    1. On a Mac, type command-A.
-    2. On Windows type control-A.
-1. Click "Run".
-    1. If the Run button is not visible, you may need to drag the center divider to the right to see it.
+
+* Then, in RStudio:
+    1. Open RStudio.
+    1. From the File menu, select "New Project".
+    1. Click "Existing Directory".
+    1. Click Browse and browse into the "r-tetrad" directory you just cloned. Click "Open" and click "Create Project".
+    1. In the lower right-hand corner of RStudio, in the Files tab, click on "scripts" and then click on "main.R". This should place the contents of main.R in the upper-left hand panel.
+    1. Then click in the upper left-hand panel and select all its contents.
+        1. On a Mac, type command-A.
+        2. On Windows type control-A.
+    1. Click "Run".
+        1. If the Run button is not visible, you may need to drag the center divider to the right to see it.
 
 The required Java JDK and Tetrad jar should be donwloaded and a sample Tetrad search run. The sample data is the NASA airfoil self noise data. This data is included in the package in the directory "data", but it can also be downloaded from https://github.com/cmu-phil/example-causal-datasets/tree/main/real/airfoil-self-noise/data.
 
