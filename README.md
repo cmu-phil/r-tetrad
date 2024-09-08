@@ -25,7 +25,7 @@ The procedure for running it in RStudio is as follows.
         ```
     1. Open a terminal window and use the cd command to move to a directory where you'e like to clone the repository--e.g. "cd /Users/user". Then type:
        ```
-       clone https://github.com/cmu-phil/r-tetrad
+       git clone https://github.com/cmu-phil/r-tetrad
        cd r-tetrad
        ```
     1. The contents of the r-tetrad project should be in this directory; you can examine them.
