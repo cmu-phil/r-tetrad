@@ -35,7 +35,7 @@ The procedure for running it in RStudio is as follows.
     1. From the File menu, select "New Project".
     1. Click "Existing Directory".
     1. Click Browse and browse into the "r-tetrad" directory you just cloned. Click "Open" and click "Create Project".
-    1. In the lower right-hand corner of RStudio, in the Files tab, click on "scripts" and then click on "main.R". This should place the contents of main.R in the upper-left hand panel.
+    1. In the lower right-hand corner of RStudio, in the Files tab "main.R". It's inside the "scripts" directory, so you may need to click on "scripts" first. This should place the contents of main.R in the upper-left hand panel.
     1. Then click in the upper left-hand panel and select all its contents.
         1. On a Mac, type command-A.
         2. On Windows type control-A.
