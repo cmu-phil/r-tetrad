@@ -69,7 +69,11 @@ It has recently been installed successfully on an Intel Max (x64), though and so
 
 Once this code is more mature, we will make an R package from it, so that it can be installed using the usual "install.packages()" and "library()" commands. As a step in that direction, we've organized the code into the expected package directories.
 
-# Description
+# Discussion
+
+Note that, like [JPype](https://jpype.readthedocs.io/en/latest/) for [Python](https://docs.python.org/3/), [rJava](https://rdrr.io/cran/rJava/man/) allows for access to all code in the Tetrad library, though the access is lower-level and requires a bit more work to manage. But with just the [Tetrad Javadocs](https://www.phil.cmu.edu/tetrad-javadocs/7.6.5/), one can oneself manage all access to the Tetrad jar oneself. So this project, like our [py-tetrad](https://github.com/cmu-phil/py-tetrad) and [rpy-tetrad](https://github.com/cmu-phil/py-tetrad/tree/main/pytetrad/R) projects, is in that sense merely a convenience to show how it can be done.
+
+That said, working out the details for accessing Tetrad via rJava can be time-consuming, and we don't think R users will in general want to do it, so we will try to develop access to some main functionality in R that doesn't require intimiate knowledge of how to do this. 
 
 We assume for now that the data is continuous and calculate a covaraince matrix of the data. The only score currently wrapped is SEM BIC and the only test currently wrapped is Fisher Z; these choices will be expanded and more general datasets allowed. The algorithms currently made available are PC, FGES, BOSS, FCI, BFCI, and LV-Lite. These options will expand. Currently very few parameters for these algorithms are passed in; these choices will expand.
 
