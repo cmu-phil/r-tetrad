@@ -14,13 +14,13 @@ Comments are always welcome. After the initial implementation, we will welcome u
 
 # Install
 
-This code can be used in R or RStudio. It has been tested on Mac aarch64 and Windows x64 but should also work on Mac x64 and Linux. Additional platforms are available by mucking with the code. We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64. Our use of Java and Tetrad is hard-coded (though the code can be mucked with). These are downloaded programmatically by our R scripts and stored locally, so occurrences of the Java JDK or Tetrad jar located elsewhere on one's computer are ignored. The version of the Java JDK we use is Corretto 21; the version of the Tetrad jar is 7.6.5. These will be updated as needed, and our code will be consistent with the choices.
+This code can be used in R or RStudio. We used RStudio 2023.06.1 Build 524 with R version 4.3.2 (2023-10-31) to test it on Mac aarch64. Our use of Java and Tetrad is hard-coded (though the code can be mucked with). These are downloaded programmatically by our R scripts and stored locally, so occurrences of the Java JDK or Tetrad jar located elsewhere on one's computer are ignored. The version of the Java JDK we use is Corretto 21; the version of the Tetrad jar is 7.6.5. These will be updated as needed, and our code will be consistent with the choices.
 
-An internet connection is required to use this code to download the above jars. Once the jars have been downloaded, an internet connection is no longer needed. If an internet connection is not available, these jars can be installed manually.
+An internet connection is required to use this code to download the above jars. Once the jars have been downloaded, an internet connection is no longer needed. If an internet connection is unavailable, these jars can be installed manually.
 
 The procedure for running it in RStudio is as follows.
 
-* Clone this repository. A good way is to install Git if you don't already have it and then type a git clone command in a terminal window.
+* Clone this repository. A good way to do this is to install Git if you don't already have it and then type a git clone command in a terminal window.
     1. Install Git if you don't already have it
         ```
         https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -44,9 +44,9 @@ The procedure for running it in RStudio is as follows.
     1. Click "Run".
         1. If the Run button is not visible, you may need to drag the center divider to the right to see it.
 
-The required Java JDK and Tetrad jar should be downloaded, and a sample Tetrad search should be run. The sample data is the NASA airfoil self-noise data. This data is included in the package in the directory "data", but it can also be downloaded from https://github.com/cmu-phil/example-causal-datasets/tree/main/real/airfoil-self-noise/data.
+The required Java JDK and Tetrad jar should be downloaded, and a sample Tetrad search should be run. The sample data is the NASA airfoil self-noise data. This data is included in the package in the directory "data," but it can also be downloaded from https://github.com/cmu-phil/example-causal-datasets/tree/main/real/airfoil-self-noise/data.
 
-This code has been tested on Mac (aarch64) and Windows 11. The versions used for Mac for testing were:
+This code has been tested on Mac (aarch64), Mac (Intel), and Windows 11, though in some cases software needed to be updated to recent versions. The versions used for Mac for testing were:
 
 ```
 platform       aarch64-apple-darwin20      
@@ -65,9 +65,7 @@ version.string R version 4.3.2 (2023-10-31)
 nickname       Eye Holes
 ```
 
-It has recently been installed successfully on an Intel Max (x64), though, and the software had to be updated to current versions to work.
-
-Once this code is more mature, we expect to create an R package from it so that it can be installed using the usual "install.packages()" and "library()" commands. As a step in that direction, we've organized the code into the expected package directories.
+Once this code is more mature, we expect to create an R package from it so that it can be installed using the usual "install.packages()" and "library()" commands. We've organized the code into the expected package directories as a step in that direction.
 
 # Discussion
 
