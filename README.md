@@ -79,6 +79,8 @@ We assume for now that the data is continuous and calculate a covaraince matrix 
 
 Please see the main.R file for a description of how to use the scripts.
 
+We will work to provide documentation and example scripts for the functions we provide, as well as unit tests.
+
 # Support
 
 This work is supported by the Department of Philosophy of Carnegie Mellon University and by the Software Engineering Institute of Carnegie Mellon University, both in Pittsburgh, PA, USA.
