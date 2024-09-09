@@ -67,13 +67,13 @@ nickname       Eye Holes
 
 It has recently been installed successfully on an Intel Max (x64), though and software all had to be updated to current versions to get it to work.
 
+Once this code is more mature, we will make an R package from it, so that it can be installed using the usual "install.packages()" and "library()" commands. As a step in that direction, we've organized the code into package-like directories.
+
 # Description
 
 We assume for now that the data is continuous and calculate a covaraince matrix of the data. The only score currently wrapped is SEM BIC and the only test currently wrapped is Fisher Z; these choices will be expanded and more general datasets allowed. The algorithms currently made available are PC, FGES, BOSS, FCI, BFCI, and LV-Lite. These options will expand. Currently very few parameters for these algorithms are passed in; these choices will expand.
 
 Please see the main.R file for a description of how to use the scripts.
-
-Once this code is more mature, we will make an R package from it, so that it can be installed using the usual "install.packages()" and "library()" commands. As a step in that direction, we've organized the code into package-like directories.
 
 # Support
 
