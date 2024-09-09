@@ -67,7 +67,7 @@ nickname       Eye Holes
 
 It has recently been installed successfully on an Intel Max (x64), though and software all had to be updated to current versions to get it to work.
 
-Once this code is more mature, we will make an R package from it, so that it can be installed using the usual "install.packages()" and "library()" commands. As a step in that direction, we've organized the code into package-like directories.
+Once this code is more mature, we will make an R package from it, so that it can be installed using the usual "install.packages()" and "library()" commands. As a step in that direction, we've organized the code into the expected package directories.
 
 # Description
 
