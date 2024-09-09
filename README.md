@@ -4,7 +4,7 @@ This is a proposed still-experimental wrapping in R of the algorithms in the Tet
 
 As of 2024-09-05, some algorithms have already been included. Once the idea has been worked out and debugged, finishing up the rest should be fairly quick.
 
-We got user feedback about that from R users who expressed a preference that having the user install Python and Java themselves in addition to R for R code and manually coordinate them with R was suboptimal. In this project, we eliminate the need to install Python or even Java; only R is needed. The scripts handle the connection to Java internally so that this is transparent to the user. 
+We got user feedback about that from R users who expressed a preference that having the user install Python and Java themselves in addition to R for R code and manually coordinate them with R was suboptimal. In this project, we eliminate the need to install Python or even Java; only R is needed. The scripts handle the internal connection to Java so that this is transparent to the user. 
 
 The initial goal is to reproduce the functionality of [TetradSearch.py in the py-tetrad project](https://github.com/cmu-phil/py-tetrad/blob/main/pytetrad/tools/TetradSearch.py) using rJava without requiring the user to install Python or even Java themselves. The TetradSearch.py class in py-tetrad is a model we can follow to create methods for our new R wrapping.
 
@@ -67,7 +67,7 @@ nickname       Eye Holes
 
 It has recently been installed successfully on an Intel Max (x64), though, and the software had to be updated to current versions to work.
 
-Once this code is more mature, we will make an R package from it so that it can be installed using the usual "install.packages()" and "library()" commands. We've organized the code into the expected package directories as a step in that direction.
+Once this code is more mature, we expect to create an R package from it so that it can be installed using the usual "install.packages()" and "library()" commands. As a step in that direction, we've organized the code into the expected package directories.
 
 # Discussion
 
