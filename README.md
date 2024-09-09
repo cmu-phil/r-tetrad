@@ -4,7 +4,7 @@ This is a proposed still-experimental wrapping in R of the algorithms in the Tet
 
 Some algorithms have already been included as of 2024-09-05. Finishing up the rest should fairly quick once the idea has been worked out and debugged.
 
-We got user feedback about that from R users who expressed a preference that installing Python and Java in addition to R for R code, and manually coordinating them with R, was suboptimal. In this project, we eliminate the need to install Python or even Java; only R is needed; the scripts handle the connection to Java internally so that this is transparent to the user. 
+We got user feedback about that from R users who expressed a preference that having the user Python and Java themselves in addition to R for R code, and manually coordinating them with R, was suboptimal. In this project, we eliminate the need to install Python or even Java; only R is needed; the scripts handle the connection to Java internally so that this is transparent to the user. 
 
 The initial goal is to reproduce the functionality of [TetradSearch.py in the py-tetrad project](https://github.com/cmu-phil/py-tetrad/blob/main/pytetrad/tools/TetradSearch.py) using rJava, without requiring the user to install Python or even to install Java themselves. The TetradSearch.py class in py-tetrad is a model we can follow for creating methods for our new R wrapping.
 
